@@ -11,6 +11,7 @@
                li a{float: left;padding: 11px 100px;color: #078186;text-decoration: none;}
         li a:hover{background-color: #078186;color: #fff;}
         .Overview{width: 100%;height: 100vh;padding: 100px;}
+        .Overview2{width: 100%;height: 350vh;padding: 100px;} 
         .Callforparticipation{width: 100%;height: 100vh;padding: 100px;background-color: #EEEEEE;}
          .header{width: 100%;padding: 20px;font-size: 36px;color:cadetblue;background-color:#EEEEEE;font-weight: 700;letter-spacing: 2px;display: flex;justify-content: center;align-items: center;}
          .box1{width: 100%;padding: 20px;margin-bottom: 20px;} 
@@ -23,23 +24,71 @@
   <ul>
       <li><a href="#a">Overview</a></li>
       <li><a href="#d">Important dates</a></li>
-      <li><a href="#e">Organisers</a></li>
        <li><a href="#f">Datasets</a></li>
          <li><a href="#h">Baseline model</a></li>
+         <li><a href="#e">Organisers</a></li>
 </ul>
-  <div class="Overview" id="a">
+  <div class="Overview2" id="a">
       <div class="box1">
         <h1 style="color: #078186;">Overview</h1>  
+        <br>
+        <br>
         <br>
         <p>
             Social Media sites like Twitter, Facebook, being user-friendly and a free source, provide opportunities to people to air their voice. People, irrespective of the age group, use these sites to share every moment of their life making these sites flooded with data.  Apart from these commendable features, these sites also have downsides as well. Due to the lack of restrictions set by these sites for its users to express their views as they like, anyone can make adverse and unrealistic comments in abusive language against anybody with an ulterior motive to tarnish one’s image and status in society. A conversational thread can also contain hate and offensive content in it which is not apparent just from the single comment or the reply to comment but can be identified if given the context of the parent content. Furthermore, the contents on such social media are spread in so many different languages including code-mixed languages such as Hinglish. So it becomes a huge responsibility for these sites to identify such hate content before it disseminates to the masses. 
 </p>
+
+
+<br>
+<br>
+<br>
+<h1 style="color: #078186;">Problem</h1>
+<br>
+<br>
+<br>
+<p>
+The problem we’re trying to address here is about identifying such conversational hate speech content that requires the context of the parent tweet in order to be justifiable.
+</p>
+<br><br>
+<img src="pasted image 0.png">
+<br><br>
+<p>
+  The above screenshot from twitter describes the problem at hand effectively. 
+The parent tweet which was done at 2:30 am on May 11th is expressing hate and profanity towards Muslim countries regarding the controversy happening in Israel at the time.
+The 2 comments on the tweet have written “Amine” which means Trustworthy or Honest in Arabic. If the 2 comments were to be analyzed for hate or offensive speech without the context of the parent tweet they wouldn’t be classified as hate or offensive content. But if we take the context of the conversation then we can say that the comments are supporting the hate expressed in the parent tweet. So those comments are hate speech as well.
+
+</p>
+<br><br>
+<img src="kamra with edit.png">
+<br><br>
+<pre>
+Another such example with code mixed text. 
+
+The Source Tweet: Modi Ji COVID situation ko solve karne ke liye ideas maang rahe the. Mera idea hai resignation dedo please… [Hate]
+
+
+Translation : Modi ji (PM of India) was asking for ideas to solve the covid situation of India. My idea to him is to resign. [Hate]
+
+The Comment: Doctors aur Scientists se manga hai. Chutiyo se nahi. Baith niche. [Hate]
+
+Translation : They have asked Doctors and Scientists. Not fuckers. Sit down. [Hate]
+
+The reply: You totally nailed it, can’t stop laughing. [Hate]
+
+The reply has a positive sentiment. But it is positive in favour of the hate expressed towards the author of the source tweet in the comment. Hence, it is supporting the hate expressed in the comment. Hence, it is also hate speech.
+
+This is the type of problem we’re aiming to solve via this shared task.
+
+</pre>
+
       </div>
   
 </div>
         <div class="Callforparticipation" id="d">
             <h1 style="color: #078186;">Important dates</h1>
-            <br>
+        <br>
+        <br>
+        <br>
             <div class="box8">
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum ea, rerum aperiam praesentium animi officia voluptates?
@@ -59,37 +108,59 @@
                     </p>
             </div>
             </div>
-            <div class="Overview" id="e">
-                <h1 style="color: #078186;">Organisers</h1>
-            <br>
-
-                <div class="box1">
-                    <p>
-                        mandl@uni-hildesheim.de - Prof. Thomas Mandl<br><br>
-                        sjmodha@gmail.com	- Prof. Sandip Modha<br><br>    
-                        hirenmadhu16@gmail.com - Hiren Madhu<br><br>
-                        shreysatapara@gmail.com - Shrey Satapara<br><br>
-
-                        </p>
-                        
-                </div>
-                </div>
-                <div class="Callforparticipation" id="f">
+                <div class="Overview2" id="f">
                     <div class="box1">
-                      <h1 style="color: #078186;">Datasets</h1>  
+                      <h1 style="color: #078186;">Dataset</h1>  
             <br>
+            <br>
+            <br>
+            <pre>
+              The collection and annotation of data is a crucial task. As collecting tweets from just one or two twitter handles
+              can lead the classifier to overfitting those two twitter users. Additionally, the problem we’re encountering can not be
+              accommodated to csv files as the structure of text data is not linear like traditional NLP problems. 
+              To make the data diverse, we’ve hand picked a few controversial stories which can contain hate and offensive language. They are as following:
+               
+              Kunal Kamra: Kunal Kamra’s satirical hate for Indian Government
+            
+              Cowdunk: Controversies regarding people in rural areas applying cowdunk on their bodies for immunity against corona. Some people hate such a mentality and some people hate news channels for spreading such news and hurting India's international image.
+            
+              BJP: Hate spreading on BJP tweets or tweets by population spreading hate for BJP
+            
+              The directory structure of data is:
 
-                      <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum ea, rerum aperiam praesentium animi officia voluptates?
-               Excepturi fugiat ut suscipit, quo sequi sunt, a dignissimos vitae temporibus iste omnis quasi?
-              </p>
+              <img src="Screenshot 2021-07-23 203910.png">
+
+              The rectangles represent directories and ovals represent files. All the files are in JSON format.
+              To tackle the dataset structure, we’ve used JSON as the data format for the dataset. JSON allows us to have a free structure that we can use to our needs. 
+              <br><br>
+              <img src="Screenshot 2021-07-23 204056.png">
+              <br><br>
+              The rectangles are keys and ovals are elements of array represented by the parent key.
+              
+               The contents of various keys are as follow:
+                
+               tweet: the text that is contained in the tweet
+                
+               tweet_id: a global tweet_id generated by twitter
+                
+               comments: array of comments that a tweet has
+                
+               replies: array of replies that a comment has
+                
+               The structure of labels.json is linear. labels.json contains no nested data structure. It only contains key-value pairs where the key is the tweet id and value is the label for the tweet with the given tweet id.
+
+
+
+              </pre>
                     </div>
                 
               </div> 
-             <div class="Overview" id="h">
+             <div class="Callforparticipation " id="h">
             <div class="box1">
               <h1 style="color: #078186;">Baseline model</h1> 
-            <br>
+        <br>
+        <br>
+        <br>
 
               <p>We understand that FIRE hosts so many beginner friendly workshops every year and this problem might not seem like beginner friendly. So, we’ve decided to provide participants with a baseline model which will provide participants with a template for steps like importing data, preprocessing, featuring and classification. And the participants can make changes in the code and experiment with various settings. 
                 The code for baseline model is available at : github link for repo
@@ -98,5 +169,21 @@
             </div>
         
       </div>
+      <div class="Overview" id="e">
+        <h1 style="color: #078186;">Organisers</h1>
+    <br>
+
+        <div class="box1">
+            <p>
+                mandl@uni-hildesheim.de - Prof. Thomas Mandl<br><br>
+                sjmodha@gmail.com	- Prof. Sandip Modha<br><br>    
+                hirenmadhu16@gmail.com - Hiren Madhu<br><br>
+                shreysatapara@gmail.com - Shrey Satapara<br><br>
+
+                </p>
+                
+        </div>
+        </div>
+   
 </body>
 </html>
